@@ -1,0 +1,522 @@
+/* =========================================================
+   REPOPILOT — LANDING PAGE
+   ========================================================= */
+
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(45, 255, 105, 0.07),
+      transparent 30%
+    ),
+    #050807;
+}
+
+.landing-background-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+
+  background-image:
+    linear-gradient(
+      rgba(77, 245, 120, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(77, 245, 120, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 85%
+    );
+}
+
+.centered-hero {
+  position: relative;
+  z-index: 1;
+
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+
+  padding: 72px 0 70px;
+
+  text-align: center;
+}
+
+/* -------------------------
+   LOGO
+   ------------------------- */
+
+.hero-wordmark {
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: var(--text);
+}
+
+.hero-wordmark span {
+  color: var(--green);
+}
+
+/* -------------------------
+   STATUS
+   ------------------------- */
+
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 18px;
+
+  padding: 7px 11px;
+
+  border: 1px solid rgba(77, 245, 120, 0.18);
+  border-radius: 999px;
+
+  background: rgba(77, 245, 120, 0.04);
+
+  color: var(--green);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.hero-status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 8px rgba(77, 245, 120, 0.9);
+
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* -------------------------
+   HERO
+   ------------------------- */
+
+.centered-hero h1 {
+  margin: 28px 0 18px;
+
+  font-size: clamp(46px, 7vw, 78px);
+  line-height: 0.98;
+
+  letter-spacing: -0.065em;
+  color: var(--text);
+}
+
+.centered-hero h1 em {
+  color: var(--green);
+  font-style: normal;
+}
+
+.hero-description {
+  max-width: 610px;
+  margin: 0 auto;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   INVESTIGATION CARD
+   ========================================================= */
+
+.center-investigation-card {
+  width: min(620px, 100%);
+
+  margin: 42px auto 0;
+
+  padding: 24px;
+
+  text-align: left;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 18, 0.98),
+      rgba(7, 11, 8, 0.98)
+    );
+
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.center-investigation-card:hover {
+  border-color: rgba(77, 245, 120, 0.25);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.55),
+    0 0 35px rgba(77, 245, 120, 0.035);
+}
+
+.card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.card-topline > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--green);
+}
+
+.card-topline i {
+  display: block;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 7px rgba(77, 245, 120, 0.85);
+}
+
+.center-investigation-card label {
+  display: block;
+
+  margin: 18px 0 8px;
+
+  color: #758178;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+/* -------------------------
+   INPUTS
+   ------------------------- */
+
+.dark-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: #050806;
+
+  color: var(--muted);
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.dark-input:focus-within {
+  border-color: rgba(77, 245, 120, 0.55);
+
+  box-shadow:
+    0 0 0 3px rgba(77, 245, 120, 0.06);
+}
+
+.dark-input input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 13px;
+}
+
+.dark-input input::placeholder {
+  color: #465149;
+}
+
+.center-investigation-card textarea {
+  display: block;
+
+  width: 100%;
+  min-height: 120px;
+
+  resize: vertical;
+
+  padding: 13px 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  outline: 0;
+
+  background: #050806;
+
+  color: var(--text);
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.center-investigation-card textarea:focus {
+  border-color: rgba(77, 245, 120, 0.55);
+
+  box-shadow:
+    0 0 0 3px rgba(77, 245, 120, 0.06);
+}
+
+.center-investigation-card textarea::placeholder {
+  color: #465149;
+}
+
+/* -------------------------
+   CTA
+   ------------------------- */
+
+.investigate-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 50px;
+
+  margin-top: 20px;
+  padding: 0 18px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: var(--green);
+
+  color: #041008;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+
+  transition:
+    transform 150ms ease,
+    background 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.investigate-cta:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  background: #65ff8d;
+
+  box-shadow:
+    0 10px 30px rgba(77, 245, 120, 0.16);
+}
+
+.investigate-cta:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.investigate-cta:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.investigate-cta span {
+  font-size: 19px;
+}
+
+/* -------------------------
+   ERROR
+   ------------------------- */
+
+.error-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  margin-top: 14px;
+  padding: 12px 14px;
+
+  border: 1px solid rgba(255, 109, 122, 0.25);
+  border-radius: 8px;
+
+  background: rgba(255, 109, 122, 0.06);
+
+  color: #ff9aa3;
+
+  font-size: 12px;
+}
+
+.error-box strong {
+  color: #ffb2b9;
+}
+
+/* =========================================================
+   PIPELINE STEPS
+   ========================================================= */
+
+.landing-steps {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  width: min(700px, 100%);
+
+  margin: 48px auto 0;
+}
+
+.landing-steps::before {
+  content: "";
+
+  position: absolute;
+
+  top: 34px;
+  left: 12%;
+  right: 12%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(77, 245, 120, 0.25),
+      rgba(77, 245, 120, 0.25),
+      transparent
+    );
+}
+
+.landing-steps article {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-steps article > span {
+  margin-bottom: 8px;
+
+  color: #526057;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 9px;
+}
+
+.landing-steps article > div {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 11px;
+
+  border: 1px solid #26352b;
+  border-radius: 9px;
+
+  background: #080d09;
+
+  color: var(--green);
+}
+
+.landing-steps strong {
+  color: #dce4de;
+
+  font-size: 10px;
+  letter-spacing: 0.09em;
+}
+
+.landing-steps p {
+  margin: 5px 0 0;
+
+  color: #606c63;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 680px) {
+  .centered-hero {
+    padding-top: 42px;
+  }
+
+  .centered-hero h1 {
+    font-size: 48px;
+  }
+
+  .center-investigation-card {
+    padding: 18px;
+  }
+
+  .landing-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 10px;
+  }
+
+  .landing-steps::before {
+    display: none;
+  }
+}
